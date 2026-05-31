@@ -1,0 +1,6 @@
+dataset = "tetris"
+radius = 1.1
+steps = 1000
+learning_rate = 0.001
+translation_range = 4.0
+permute_nodes = false

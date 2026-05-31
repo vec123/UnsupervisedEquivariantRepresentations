@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unsupervised-equivariant-representations"
+version = "0.1.0"
+description = "Reusable JAX/e3nn-jax project for unsupervised invariant/equivariant graph representations."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "e3nn-jax",
+  "flax",
+  "jax",
+  "jraph",
+  "matplotlib",
+  "numpy",
+  "optax",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+uer-train-classifier = "uer.cli.train_classifier:main"
+uer-train-reconstruction = "uer.cli.train_reconstruction:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
